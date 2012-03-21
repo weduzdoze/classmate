@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fusebox>
+	<circuits>
+		<circuit alias="layout" path="controller/layout/" parent=""/>
+		<circuit alias="mLayout" path="model/mLayout/" parent=""/>
+		<circuit alias="vLayout" path="view/vLayout/" parent=""/>
+		
+		<circuit alias="user" path="controller/user/" parent=""/>
+		<circuit alias="mUser" path="model/mUser/" parent=""/>
+		<circuit alias="vUser" path="view/vUser/" parent=""/>
+
+		<circuit alias="home" path="controller/home/" parent=""/>
+		<circuit alias="mHome" path="model/mHome/" parent=""/>
+		<circuit alias="vHome" path="view/vHome/" parent=""/>		
+		
+		<circuit alias="classes" path="controller/classes/" parent=""/>
+		<circuit alias="mClasses" path="model/mClasses/" parent=""/>
+		<circuit alias="vClasses" path="view/vClasses/" parent=""/>	
+		
+	</circuits>
+
+	<classes>
+	</classes>
+
+
+	<parameters>
+		<parameter name="fuseactionVariable" value="fuseaction" />
+		<parameter name="defaultFuseaction" value="user.index" />
+		<parameter name="precedenceFormOrUrl" value="form"/>
+		<parameter name="mode" value="development"/>
+		<parameter name="password" value=""/>
+		<parameter name="parseWithComments" value="false" />
+		<parameter name="conditionalParse" value="false" />
+		<parameter name="allowLexicon" value="true" />
+		<parameter name="useAssertions" value="true" />
+		<parameter name="ignoreBadGrammar" value="true"/>
+		<parameter name="scriptlanguage" value="cfmx" />
+		<parameter name="scriptFileDelimiter" value="cfm"/>
+		<parameter name="maskedFileDelimiters" value="htm,cfm,cfml,php,php4,asp,aspx"/>
+		<parameter name="characterEncoding" value="utf-8"/>
+	</parameters>
+
+	<globalfuseactions>
+		<preprocess>
+			
+		</preprocess>
+		<postprocess>
+			<do action="layout.layout" />
+		</postprocess>
+	</globalfuseactions>
+
+	<plugins>
+		<phase name="preProcess">
+		</phase>
+		<phase name="preFuseaction">
+		</phase>
+		<phase name="postFuseaction">
+		</phase>
+		<phase name="fuseactionException">
+		</phase>
+		<phase name="postProcess">
+		</phase>
+		<phase name="processError">
+		</phase>
+	</plugins>
+
+</fusebox>

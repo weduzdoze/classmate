@@ -1,0 +1,32 @@
+function userSearchSuccess(resp) {
+	 $("#userSearchOutput").empty();
+	 var resultsLength = resp.DATA.length;
+    	if(resultsLength > 0)
+    		{
+        for(var i = 0; i < resultsLength; i ++)
+        {
+            var id = resp.DATA[i][0];
+			var username = resp.DATA[i][1];
+			var firstname = resp.DATA[i][2];
+			var lastname = resp.DATA[i][3];
+			var avatarfilename = resp.DATA[i][4];
+ 
+            var recordnumber = i + 1;
+ 
+            $("#userSearchOutput").append
+			('<img src=\'\\resources\\avatars\\' + avatarfilename + '_thumb.jpg\'><a id=\'friendLink\' href=\'index.cfm?fuseaction=account.view&viewUser=' + id + '\'\>' + ' ' + username + ' (' + firstname + ' ' + lastname + ')</a></br>'
+			)
+        }
+    }
+    else
+    {
+        $("#userSearchOutput").html("No users were returned.");
+    }
+}
+
+<cffunction name="userSearch" access="remote" returntype="any" >		
+		<cfargument name="searchString" type="string" required="true" />
+			<cfstoredproc procedure="userSearch" datasource="winBuddie">
+				<cfprocparam cfsqltype="CF_SQL_VARCHAR" value="#searchString#">		 
+		</cfstoredproc> 		
+	</cffunction>	

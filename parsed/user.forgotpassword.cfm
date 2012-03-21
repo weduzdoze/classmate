@@ -1,0 +1,46 @@
+<cfsetting enablecfoutputonly="Yes">
+<cfprocessingdirective pageencoding="utf-8">
+<cfset myFusebox.thisCircuit = "user">
+<cfset myFusebox.thisFuseaction = "forgotPassword">
+<cfset myFusebox.thisCircuit = "vUser">
+<cfset myFusebox.thisFuseaction = "forgotPassword">
+<cftry>
+<cfoutput><cfinclude template="..\view/vUser/dsp_forgotPassword.cfm"></cfoutput>
+<cfcatch type="missingInclude">
+<cfif Right(cfcatch.missingFilename, len("view/vUser/dsp_forgotPassword.cfm") ) EQ "view/vUser/dsp_forgotPassword.cfm">
+<cfthrow type="fusebox.missingFuse" message="missing Fuse" detail="You tried to include a fuse dsp_forgotPassword.cfm in circuit vUser which does not exist.">
+<cfelse>
+<cfrethrow>
+</cfif>
+</cfcatch>
+</cftry>
+<cfset myFusebox.thisFuseaction = "forgotPassword">
+<cfset myFusebox.thisCircuit = "user">
+<cfset myFusebox.thisFuseaction = "forgotPassword">
+<cfset myFusebox.thisCircuit = "user">
+<cfset myFusebox.thisCircuit = "layout">
+<cfset myFusebox.thisFuseaction = "layout">
+<cfset myFusebox.thisCircuit = "mLayout">
+<cfset myFusebox.thisFuseaction = "layout">
+<cfset myFusebox.thisFuseaction = "layout">
+<cfset myFusebox.thisCircuit = "layout">
+<cfset myFusebox.thisCircuit = "vLayout">
+<cfset myFusebox.thisFuseaction = "layout">
+<cftry>
+<cfoutput><cfinclude template="..\view/vLayout/dsp_layout.cfm"></cfoutput>
+<cfcatch type="missingInclude">
+<cfif Right(cfcatch.missingFilename, len("view/vLayout/dsp_layout.cfm") ) EQ "view/vLayout/dsp_layout.cfm">
+<cfthrow type="fusebox.missingFuse" message="missing Fuse" detail="You tried to include a fuse dsp_layout.cfm in circuit vLayout which does not exist.">
+<cfelse>
+<cfrethrow>
+</cfif>
+</cfcatch>
+</cftry>
+<cfset myFusebox.thisFuseaction = "layout">
+<cfset myFusebox.thisCircuit = "layout">
+<cfset myFusebox.thisFuseaction = "layout">
+<cfset myFusebox.thisCircuit = "layout">
+<cfset myFusebox.thisCircuit = "user">
+<cfset myFusebox.thisFuseaction = "forgotPassword">
+<cfsetting enablecfoutputonly="No">
+

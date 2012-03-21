@@ -1,0 +1,56 @@
+jquery each  results.each
+
+
+function userSearchSuccess(resp) {
+	 $("#userSearchOutput").empty();
+	 var resultsLength = resp.DATA.length;
+    	if(resultsLength > 0)
+    		{
+        for(var i = 0; i < resultsLength; i ++)
+        {
+            var id = resp.DATA[i][0];
+			var username = resp.DATA[i][1];
+			var firstname = resp.DATA[i][2];
+			var lastname = resp.DATA[i][3];
+			var avatarfilename = resp.DATA[i][4];
+ 
+            var recordnumber = i + 1;
+ 
+            $("#userSearchOutput").append
+			('<img src=\'\\resources\\avatars\\' + avatarfilename + '_thumb.jpg\'><a id=\'friendLink\' href=\'index.cfm?fuseaction=account.view&viewUser=' + id + '\'\>' + ' ' + username + ' (' + firstname + ' ' + lastname + ')</a></br>'
+			)
+        }
+    }
+    else
+    {
+        $("#userSearchOutput").html("No users were returned.");
+    }
+}
+
+
+<cfif userSearchResults EQ 1>
+	<a href="index.cfm?fuseaction=friends.myFriends">Hide</a>
+	<form name="requestFriend" method="post" action="index.cfm?fuseaction=friends.requestFriend">
+	<table class="basicTable">
+		<tr>
+			<th>Select</th>
+			<th>UserName</th>
+		</tr>	
+	<cfoutput query="searchUsers">	
+		<cfif searchUsers.username NEQ session.currentUserName
+			AND NOT listFindNoCase(NewRequestList, searchUsers.username) 
+			AND NOT listFindNoCase(friendsList, searchUsers.username) 
+			AND NOT listFindNoCase(SentRequestList, searchUsers.username)>					
+		<tr>
+			<td><input type="radio" name="friendID" value="#searchUsers.ID#"></td>
+			<td>				
+				<img src="\resources\avatars\#searchUsers.avatarFileName#_thumb.jpg">
+				<a href="index.cfm?fuseaction=account.view&viewUser=#searchUsers.ID#">#searchUsers.username# (#searchUsers.firstname# #searchUsers.lastname#)</a>			
+			</td>		
+		</tr>
+		</cfif>
+	</cfoutput>
+	</table>
+		<div class="btnContainer"><input type="submit" name="sendFriendRequest" value="Request Friend"></div>
+	</form>	
+</cfif>		

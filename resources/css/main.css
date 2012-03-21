@@ -1,0 +1,72 @@
+.error {
+    font-size: 12px;
+	padding:2px;
+    background-color: #ffc;
+    border: 1px solid #c00;
+}
+
+label.error{
+	float:right;
+}
+
+input.error{
+	float:left;
+}
+
+label {
+	float:left;
+	font-size:19px;
+	padding:1px;
+}
+input {
+	padding:1px;
+	float:right;
+}
+
+fieldset {
+width:420px;
+}
+
+.courseLinkCRN{
+	border: 1px solid black;
+	width:400px;
+}
+.courseLinkName{
+	border: 1px solid black;
+	width:400px;
+}
+
+#editClassesContainer{
+	width:900px;
+	margin:0 auto;
+}
+#searchResults{
+	float:left;
+}
+#myClassContainer{
+	float:right;
+	width:500px;
+	height:300px;
+}
+#classLookup{
+ width:320px;
+ height:300px;
+ float:left;	
+}
+fieldset input{
+	float:left;
+}
+#nameSearchFieldset{
+	width:300px;
+}
+#crnSearchFieldset{
+	width:300px;
+}
+.courseLinkName:hover{
+	color:red;
+	cursor:pointer;
+}
+.courseLinkCRN:hover{
+	color:red;
+	cursor:pointer;
+}
