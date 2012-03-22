@@ -2,7 +2,7 @@
 <h1>Welcome<br />#session.currentusername#!</h1>
 </cfoutput>
 <div id="myClasses">
-	<h2>Currently Enrolled In:</h2>Jim likes balls
+	<h2>Currently Enrolled In:</h2>
 	<ul>
 	<cfoutput query="getClasses">
 		<li>
