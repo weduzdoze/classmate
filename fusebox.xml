@@ -17,6 +17,10 @@
 		<circuit alias="mClasses" path="model/mClasses/" parent=""/>
 		<circuit alias="vClasses" path="view/vClasses/" parent=""/>	
 		
+		<circuit alias="assignments" path="controller/assignments/" parent=""/>
+		<circuit alias="mAssignments" path="model/mAssignments/" parent=""/>
+		<circuit alias="vAssignments" path="view/vAssignments/" parent=""/>		
+		
 	</circuits>
 
 	<classes>
