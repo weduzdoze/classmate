@@ -21,7 +21,8 @@
 <cfif myfusebox.originalfuseaction NEQ "course" AND myfusebox.originalcircuit NEQ "user">
 <a href="index.cfm?fuseaction=home.view">Home</a><br />
 <a href="index.cfm?fuseaction=user.logout">Logout (<cfoutput>#session.currentUsername#</cfoutput>)</a><br />
-<a href="index.cfm?fuseaction=assignments.add">Add Assignment</a>
+<a href="index.cfm?fuseaction=assignments.add">Add Assignment</a><br />
+<a href="index.cfm?fuseaction=admin.add">Admin</a>
 </cfif>
 <body>
 	<cfif len(request.msg)>
