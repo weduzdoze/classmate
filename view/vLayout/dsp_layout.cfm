@@ -18,11 +18,12 @@
 </cfif>
 		
 </head>
-<cfif myfusebox.originalfuseaction NEQ "course" AND myfusebox.originalcircuit NEQ "user">
+<cfif myfusebox.originalfuseaction NEQ "course" AND myfusebox.originalcircuit NEQ "user" AND myfusebox.originalfuseaction NEQ "executeQuery">
 <a href="index.cfm?fuseaction=home.view">Home</a><br />
 <a href="index.cfm?fuseaction=user.logout">Logout (<cfoutput>#session.currentUsername#</cfoutput>)</a><br />
 <a href="index.cfm?fuseaction=assignments.add">Add Assignment</a><br />
-<a href="index.cfm?fuseaction=admin.add">Admin</a>
+<a href="index.cfm?fuseaction=admin.add">Admin</a><br />
+<a href="index.cfm?fuseaction=admin.query">Query</a><br />
 </cfif>
 <body>
 	<cfif len(request.msg)>
